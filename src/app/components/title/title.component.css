@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+}
+.container .title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  width: 50%;
+}
+.container .title-container .stars {
+  max-width: 150px;
+  max-height: 35px;
+}
+.container .title-container .title {
+  font: small-caps bold 70px/1 sans-serif;
+}
+.container .title-container .subtitle {
+  font: small-caps bold 18px/1 sans-serif;
+}
+
+/*# sourceMappingURL=title.component.css.map */
