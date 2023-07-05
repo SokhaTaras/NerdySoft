@@ -1,0 +1,33 @@
+.container {
+  border: 1px solid white;
+  height: 99%;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.start {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.start-btn {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-image: linear-gradient(-45deg, #8031bd, #8E8E8E, #6ca0d0, #8031bd);
+  animation: gradient 15s ease infinite;
+  background-size: 350%;
+}
+
+.start-btn:hover {
+  background: white;
+  transition: 350ms;
+}
+
+/*# sourceMappingURL=quiz-card.component.css.map */
