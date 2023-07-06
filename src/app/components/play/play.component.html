@@ -1,12 +1,12 @@
 <div class="container">
   <h1 class="quiz-name">{{currentQuizz?.name}}</h1>
   <div *ngIf="currentQuestion$ | async as question">
-    <p>type - {{question.type}}</p>
+    <h4 class="type">Type: {{question.type}}</h4>
     <div class="question-wrapper">
-      <h3 class="question" [innerHTML]="getSanitizedString(question.question)"></h3>
+      <h2 class="question" [innerHTML]="getSanitizedString(question.question)"></h2>
       <div class="answer-block">
         <div class="answer" (click)="addQuestionResult(question, answer.toString())" *ngFor="let answer of question.incorrect_answers.concat([question.correct_answer])">
-         <span>{{answer}}</span>
+         <span [innerHTML]="getSanitizedString(answer.toString())">{{answer}}</span>
         </div>
       </div>
     </div>

@@ -47,8 +47,26 @@ app-quiz-card {
 }
 .random-quiz .random-quiz-btn:hover {
   background-image: none;
-  transition: 3.5s;
   background-color: #fff;
+  transition: 0.5s;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .quiz-list-item {
+    width: calc(33.33% - 10px);
+  }
+  app-quiz-card {
+    width: calc(33.33% - 10px);
+  }
+}
+@media (max-width: 480px) {
+  .quiz-list-item {
+    width: calc(50% - 10px);
+  }
+  app-quiz-card {
+    width: calc(50% - 10px);
+  }
 }
 
 /*# sourceMappingURL=quiz-list.component.css.map */
