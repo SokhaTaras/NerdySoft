@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { IQuizz } from '../../interfaces/quizz.interface';
+import { QuestionCategoryEnum } from '../../enums/question-category.enum';
+import { Router } from '@angular/router';
+import { QuizzesStateService } from '../../services/quizzes-state.service';
 
 @Component({
   selector: 'app-quiz-list',
@@ -7,5 +9,22 @@ import { IQuizz } from '../../interfaces/quizz.interface';
   styleUrls: ['./quiz-list.component.scss'],
 })
 export class QuizListComponent {
-  quizes: IQuizz[] = [];
+  quizzes$ = this.quizService.quizzes$;
+  loading: boolean = true;
+
+  constructor(private quizService: QuizzesStateService) {
+    this.statusSwitcher();
+  }
+
+  statusSwitcher() {
+    this.quizzes$.subscribe((val) => {
+      if (val.length) {
+        this.loading = false;
+      }
+    });
+  }
+
+  selectQuizz(name?: QuestionCategoryEnum) {
+    this.quizService.startQuiz(name);
+  }
 }

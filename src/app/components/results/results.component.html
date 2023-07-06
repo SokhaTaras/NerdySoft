@@ -1,1 +1,7 @@
-<p>results works!</p>
+<div>
+  {{currentResultsStats$|async|json}}
+  <p>{{((currentResultsStats$|async)?.quizzTime || 0) * 1000 | date:'mm:ss'}}</p>
+  <p>{{((currentResultsStats$|async)?.averageTime || 0) * 1000 | date:'mm:ss'}}</p>
+  <p>{{((currentResultsStats$|async)?.averageTimeForSuccess || 0) * 1000 | date:'mm:ss'}}</p>
+  <p>{{((currentResultsStats$|async)?.averageTimeForWrong || 0) * 1000 | date:'mm:ss'}}</p>
+</div>
