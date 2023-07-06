@@ -42,6 +42,7 @@
 
 .answer-block{
   margin-top: 75px;
+  margin-bottom: 75px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -72,6 +73,21 @@
     width: 16%;
     height: 105%;
   }
+}
+
+.cancel{
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+  height: 7%;
+  background-image: linear-gradient(45deg, #ffac3a 0%, #ff94bb 100%);
+}
+
+.cancel:hover{
+  background-image: none;
+  background-color: #fff;
 }
 
 @media (max-width: 768px) {
