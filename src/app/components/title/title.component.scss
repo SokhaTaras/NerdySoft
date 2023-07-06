@@ -12,6 +12,7 @@
   width: 100%;
   min-height: 100%;
 
+
   .title-container{
     display: flex;
     align-items: center;
@@ -26,9 +27,12 @@
     }
     .title{
       font: small-caps bold 70px/1 sans-serif;
-    }
-    .subtitle{
-      font: small-caps bold 18px/1 sans-serif;
+
+      background: linear-gradient(45deg, #ffac3a 0%, #ff94bb 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
     }
   }
 }

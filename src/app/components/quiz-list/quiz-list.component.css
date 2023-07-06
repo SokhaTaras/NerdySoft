@@ -15,7 +15,11 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   margin: 10px 0;
-  width: 100%;
+  width: calc(20% - 10px);
+  flex-grow: 1;
+  text-align: center;
+  height: 300px;
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2);
 }
 
 app-quiz-card {
@@ -33,6 +37,7 @@ app-quiz-card {
   justify-content: center;
   align-items: center;
   height: 30px;
+  margin-bottom: 10px;
 }
 .random-quiz .random-quiz-btn {
   width: 33%;
@@ -42,7 +47,7 @@ app-quiz-card {
 }
 .random-quiz .random-quiz-btn:hover {
   background-image: none;
-  transition: 350ms;
+  transition: 3.5s;
   background-color: #fff;
 }
 

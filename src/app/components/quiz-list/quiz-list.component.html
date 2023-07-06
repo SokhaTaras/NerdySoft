@@ -1,19 +1,14 @@
 <div class="container">
   <div class="random-quiz">
-    <button class="random-quiz-btn">I'm lucky</button>
+    <button class="random-quiz-btn"  (click)="selectQuizz()">I'm lucky</button>
   </div>
-  <div class="quiz-list">
-    <div class="quiz-list-item">
-      <app-quiz-card></app-quiz-card>
-      <app-quiz-card></app-quiz-card>
-      <app-quiz-card></app-quiz-card>
-      <app-quiz-card></app-quiz-card>
-      <app-quiz-card></app-quiz-card>
-      <app-quiz-card></app-quiz-card>
-      <app-quiz-card></app-quiz-card>
-      <app-quiz-card></app-quiz-card>
-      <app-quiz-card></app-quiz-card>
-      <app-quiz-card></app-quiz-card>
+  <div class="quiz-list" *ngIf="!loading">
+    <div class="quiz-list-item" *ngFor="let quizz of (quizzes$ | async)">
+      <app-quiz-card [quiz]="quizz"></app-quiz-card>
     </div>
+  </div>
+  <div class="container" *ngIf="loading">
+    <svg></svg>
+    <object data="assets/SVG-Loaders_svg-loaders_rings.svg%20at%20master%20·%20SamHerbert_SVG-Loaders%20·%20GitHub_files/rings.svg" width="600" height="300"> </object>
   </div>
 </div>

@@ -2,12 +2,13 @@
   <div class="card-image">
   </div>
   <div class="card-title" >
-    {{'Name'}}
+    {{'Name: '}} {{quiz?.name}}
   </div>
   <div class="card-location">
-    {{"Amount of question"}}
+    {{"Amount of question: "}}
+    {{quiz?.questions?.length}}
   </div>
   <div class="start">
-    <button class="start-btn" (click)="fn()">Start</button>
+    <button class="start-btn" (click)="selectQuiz()">Start</button>
   </div>
 </div>
