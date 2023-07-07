@@ -1,14 +1,19 @@
 # NerdySoft
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
-@angular-devkit/architect       0.1502.9
-@angular-devkit/build-angular   15.2.9
-@angular-devkit/core            15.2.9
-@angular-devkit/schematics      15.2.9
-@schematics/angular             15.2.9
-rxjs                            7.8.1
-typescript                      4.9.5
-NodeJS                          v14.20.1
+# Package                            Version
+------------------------------------------------------------
+* This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+* @angular-devkit/architect       0.1502.9
+* @angular-devkit/build-angular   15.2.9
+* @angular-devkit/core            15.2.9
+* @angular-devkit/schematics      15.2.9
+* @schematics/angular             15.2.9
+* rxjs                            7.8.1
+* typescript                      4.9.5
+* NodeJS                          v14.20.1
+
+# Hosting (Vercel)
+* https://quizz-alpha-three.vercel.app/home
 
 ## Development server
 
