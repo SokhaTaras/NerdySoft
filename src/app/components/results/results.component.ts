@@ -9,5 +9,7 @@ import { QuizzesStateService } from '../../services/quizzes-state.service';
 export class ResultsComponent {
   currentResultsStats$ = this.quizService.getCurrentQuizzStats();
 
-  constructor(private quizService: QuizzesStateService) {}
+  constructor(private quizService: QuizzesStateService) {
+    this.currentResultsStats$.subscribe((val) => console.log(val));
+  }
 }

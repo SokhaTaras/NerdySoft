@@ -1,7 +1,26 @@
-<div>
-  {{currentResultsStats$|async|json}}
-  <p>{{((currentResultsStats$|async)?.quizzTime || 0) * 1000 | date:'mm:ss'}}</p>
-  <p>{{((currentResultsStats$|async)?.averageTime || 0) * 1000 | date:'mm:ss'}}</p>
-  <p>{{((currentResultsStats$|async)?.averageTimeForSuccess || 0) * 1000 | date:'mm:ss'}}</p>
-  <p>{{((currentResultsStats$|async)?.averageTimeForWrong || 0) * 1000 | date:'mm:ss'}}</p>
+<div class="container">
+  <h1 class="results">Results</h1>
+  <div>
+    <h2 class="points">Points: {{(currentResultsStats$ |async)?.points || 0}}</h2>
+  </div>
+  <div class="statistics-wrapper">
+    <div class="statistics-block">
+      <div class="statistics-item">
+        <span>{{((currentResultsStats$|async)?.quizzTime || 0) | date:'m:s'}}</span>
+        <p>Time</p>
+      </div>
+      <div class="statistics-item">
+        <span>{{((currentResultsStats$|async)?.averageTime || 0)  / 1000  |  number:'1.1'}}</span>
+        <p>Time per test</p>
+      </div>
+      <div class="statistics-item">
+        <span>{{((currentResultsStats$|async)?.averageTimeForSuccess || 0)  / 1000  |  number:'1.1'}}</span>
+        <p>Time per correct test</p>
+      </div>
+      <div class="statistics-item">
+        <span>{{((currentResultsStats$|async)?.averageTimeForWrong || 0) / 1000  |  number:'1.1'}}</span>
+        <p>Time per wrong test</p>
+      </div>
+    </div>
+  </div>
 </div>

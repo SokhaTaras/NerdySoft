@@ -88,8 +88,8 @@ export class QuizzesStateService {
       points,
       pointsMax,
       averageTime: quizzTime / pointsMax || 0,
-      averageTimeForSuccess: timeForSuccess / points || 0,
-      averageTimeForWrong: timeForWrong / (pointsMax - points) || 0,
+      averageTimeForSuccess: quizzTime / points || 0,
+      averageTimeForWrong: quizzTime / (pointsMax - points) || 0,
       quizzTime,
     };
   }
