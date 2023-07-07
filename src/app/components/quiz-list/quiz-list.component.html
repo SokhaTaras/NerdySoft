@@ -1,6 +1,6 @@
 <div class="container">
   <div class="random-quiz">
-    <button class="random-quiz-btn"  (click)="selectQuizz()">I'm lucky</button>
+    <button class="random-quiz-btn"  (click)="selectQuizz()" [disabled]="loading">I'm lucky</button>
   </div>
   <div class="quiz-list" *ngIf="!loading">
     <div class="quiz-list-item" *ngFor="let quizz of (quizzes$ | async)">

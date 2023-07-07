@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { QuizzesStateService } from '../../services/quizzes-state.service';
 import { IQuestion } from '../../interfaces/question.interface';
 import { IQuizz } from '../../interfaces/quizz.interface';
@@ -11,10 +11,11 @@ import { DomSanitizer } from '@angular/platform-browser';
   templateUrl: './play.component.html',
   styleUrls: ['./play.component.scss'],
 })
-export class PlayComponent {
+export class PlayComponent implements OnInit {
   currentQuizz: IQuizz | null | undefined;
   currentQuestion$ = new BehaviorSubject<IQuestion | null>(null);
-  currentPosition = 0;
+  currentPosition: number = 0;
+  oneTestTime: number = 0;
 
   constructor(
     private router: Router,
@@ -29,16 +30,22 @@ export class PlayComponent {
     });
   }
 
+  ngOnInit() {
+    this.oneTestTime = Date.now();
+  }
+
   getSanitizedString(value: string) {
     return this.sanitizer.bypassSecurityTrustHtml(value);
   }
 
   addQuestionResult(question: IQuestion, answer: string) {
-    this.quizService.addQuestionResult(question, answer, 20);
+    const timePerTest = Date.now() - this.oneTestTime;
+    this.quizService.addQuestionResult(question, answer, timePerTest);
     this.currentPosition += 1;
     const maxPosition = this.currentQuizz?.questions?.length as number;
 
     if (this.currentPosition < maxPosition) {
+      this.oneTestTime = Date.now();
       this.currentQuestion$.next(
         this.currentQuizz?.questions[this.currentPosition] as IQuestion
       );

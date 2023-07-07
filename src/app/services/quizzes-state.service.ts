@@ -12,11 +12,11 @@ import { getMultipleRandomElementsFromArray } from '../utils/helpers';
 import { IQuizz } from '../interfaces/quizz.interface';
 import { Category } from '../interfaces/category.interface';
 import { IGetQuestionsResponse } from '../interfaces/get-questions-response.interface';
-import { IQuestionResult } from '../interfaces/question-result.interface';
 import { IQuestion } from '../interfaces/question.interface';
 import { IStats } from '../interfaces/stats.interface';
 import { QuestionCategoryEnum } from '../enums/question-category.enum';
 import { Router } from '@angular/router';
+import { IQuestionResult } from '../interfaces/question-result.interface';
 
 const DEFAULT_QUESTIONS_AMOUNT = 10;
 const DEFAULT_QUIZZES_AMOUNT = 10;
@@ -88,8 +88,8 @@ export class QuizzesStateService {
       points,
       pointsMax,
       averageTime: quizzTime / pointsMax || 0,
-      averageTimeForSuccess: timeForSuccess / points || 0,
-      averageTimeForWrong: timeForWrong / (pointsMax - points) || 0,
+      averageTimeForSuccess: quizzTime / points || 0,
+      averageTimeForWrong: quizzTime / (pointsMax - points) || 0,
       quizzTime,
     };
   }
