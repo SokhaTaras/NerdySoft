@@ -10,16 +10,9 @@ import { Router } from '@angular/router';
 })
 export class QuizCardComponent {
   @Input() quiz: IQuizz | undefined;
-  constructor(
-    private quizService: QuizzesStateService,
-    private router: Router
-  ) {}
+  constructor(private quizService: QuizzesStateService) {}
 
   selectQuiz() {
     this.quizService.startQuiz(this.quiz?.name);
-  }
-
-  goToPlayPage() {
-    this.router.navigate(['play']);
   }
 }
