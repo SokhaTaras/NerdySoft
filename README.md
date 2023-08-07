@@ -1,4 +1,3 @@
-# NerdySoft
 # Quizz
 Quiz is a captivating quiz app that tests your knowledge across various categories. Enjoy  quiz modes, create custom quizzes, and check out your statistics.
 
